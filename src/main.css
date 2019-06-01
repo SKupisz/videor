@@ -60,3 +60,50 @@ body{
 .row-submit{
  float: right;
 }
+@media screen and (max-width: 741px)
+{
+  .selecting-video{
+    height: 130px;
+  }
+  .menu-wrapper{
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 641px)
+{
+  .video-shower{
+    width: 400px;
+    height: 225px;
+  }
+  .menu-wrapper{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 428px)
+{
+  .select-input{
+    min-width: 200px;
+  }
+  .select-submit,.add-submit,.fav-submit{
+    font-size: 0.9em;
+  }
+  .video-shower{
+    width: 100%;
+    height: auto*16/9;
+  }
+  .fav-row{
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 362px)
+{
+  .selecting-video{
+    height: 160px;
+    margin-bottom: 0px;
+  }
+  .fav-showing{
+    margin-top: 30px;
+  }
+}
