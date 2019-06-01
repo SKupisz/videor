@@ -12,6 +12,7 @@ body{
   text-align: center;
   background: rgba(1,1,1,.4);
   margin-bottom: 40px;
+  height: 120px;
 }
 .welcome-header{
   font-size: 1.5em;
