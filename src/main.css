@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+body{
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background: url("./textured_paper.png");
+  font-family: 'Lato',sans-serif;
+}
+.selecting-video{
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  background: rgba(1,1,1,.4);
+  margin-bottom: 40px;
+}
+.welcome-header{
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+.select-input{
+  font-size: 1em;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  min-width: 300px;
+  margin: 5px;
+}
+.select-submit,.add-submit,.fav-submit{
+  cursor: pointer;
+  margin: 5px;
+  font-size: 1.1em;
+  padding: 5px;
+  background: url("./textured_paper.png");
+  border: none;
+  border-radius: 5px;
+}
+.video-shower{
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+.fav-showing{
+  display: none;
+}
+.fav-row{
+  width: 80%;
+  font-size: 1.3em;
+  background: rgba(1,1,1,.2);
+  border-radius: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  height: 50px;
+  cursor: pointer;
+}
+.fav-name{
+  float: center;
+}
+.row-submit{
+ float: right;
+}
