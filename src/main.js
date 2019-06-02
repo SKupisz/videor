@@ -21,20 +21,24 @@ function playFromList(event){
   //alert(address);
   if(address <= 0)
   {
-    address = localStore.indexOf(songName)+1;  
+    address = localStore.indexOf(songName)+1;
   }
   final = newLocalStore[address];
   document.querySelector(".video-shower").style.display = "block";
   document.querySelector(".fav-showing").style.display = "none";
   document.querySelector(".fav-showing").innerHTML = "";
-  document.querySelector(".fav-submit").innerHTML = "My favourites list"; 
+  document.querySelector(".fav-submit").innerHTML = "My favourites list";
+  if(final.indexOf("&") !== -1)
+  {
+    final = final.substr(0,final.indexOf("&"));
+  }
   if(final.indexOf("youtube") !== -1 && final.indexOf("embed") != -1)
   {
     content.src = final;
   }
   else if(final.indexOf("youtube") !== -1 && final.indexOf("embed") === -1)
   {
-    
+
     final = final.replace("watch?v=","embed/");
     content.src = final;
   }
@@ -42,24 +46,31 @@ function playFromList(event){
   {
     content.src = final;
   }
-  
+
 }
 
 
 document.querySelector(".main-load").addEventListener("click",function(){
+  if(document.querySelector(".video-shower").style.display == "none")
+  {
+    document.querySelector(".video-shower").style.display = "block";
+    document.querySelector(".fav-showing").style.display = "none";
+    document.querySelector(".fav-showing").innerHTML = "";
+    document.querySelector(".fav-submit").innerHTML = "My favourites list";
+  }
   inputValue = document.querySelector(".select-input").value;
   if(inputValue.indexOf("&") !== -1)
   {
     inputValue = inputValue.substr(0,inputValue.indexOf("&"));
   }
-  
+
   if(inputValue.indexOf("youtube") !== -1 && inputValue.indexOf("embed") != -1)
   {
     content.src = inputValue;
   }
   else if(inputValue.indexOf("youtube") !== -1 && inputValue.indexOf("embed") === -1)
   {
-    
+
     inputValue = inputValue.replace("watch?v=","embed/");
     content.src = inputValue;
   }
@@ -67,7 +78,7 @@ document.querySelector(".main-load").addEventListener("click",function(){
   {
     content.src = inputValue;
   }
-  
+
 });
 
 document.querySelector(".add-submit").addEventListener("click",function(){
@@ -99,7 +110,7 @@ document.querySelector(".add-submit").addEventListener("click",function(){
     }
     window.localStorage.setItem("list", window.localStorage.list+name+";"+inputValue+";");
   }
-  
+
 });
 
 document.querySelector(".fav-submit").addEventListener("click",function(){
@@ -129,13 +140,13 @@ document.querySelector(".fav-submit").addEventListener("click",function(){
         playFromList(event);
       });
     }
-    
+
   }
   else
   {
     document.querySelector(".video-shower").style.display = "block";
     document.querySelector(".fav-showing").style.display = "none";
     document.querySelector(".fav-showing").innerHTML = "";
-    document.querySelector(".fav-submit").innerHTML = "My favourites list";  
+    document.querySelector(".fav-submit").innerHTML = "My favourites list";
   }
 });
